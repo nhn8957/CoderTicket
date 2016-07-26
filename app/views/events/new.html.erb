@@ -1,0 +1,33 @@
+<div class = "container">
+<br><br>
+<h1>New event</h1>
+
+<div class="form-group">
+<%= form_for Event.new do |event| %>
+
+	<%= event.label :venue_id %>
+    <%= event.select :venue_id, @venues.map{|u| [u.name, u.id]}, {}, {class: "form-control"} %>
+ 
+ 
+    <%= event.label :category_id %>
+    <%= event.select :category_id, @categories.map{|u| [u.name, u.id]}, {}, {class: "form-control"} %>
+
+	<%= event.label :starts_at %><br/>
+    <%= event.datetime_select :starts_at, class: "form-control" %><br>
+	
+    <%= event.label :ends_at %><br/>
+    <%= event.datetime_select :ends_at, class: "form-control" %><br>
+
+	<%= event.label :name %>
+	<%= event.text_field :name, class: 'form-control' %><br>
+
+	<%= event.label :hero_image_url %>
+	<%= event.text_field :hero_image_url, class: 'form-control' %><br>
+
+	<%= event.label :extended_html_description %>
+	<%= event.text_field :extended_html_description, class: 'form-control' %><br>
+
+	<%= event.submit "Create event", class: 'btn btn-success'%>
+
+<% end %>
+</div>

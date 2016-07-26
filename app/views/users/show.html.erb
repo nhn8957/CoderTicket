@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <h1 class="display-3">Your profile</h1>
+  <p class="lead">
+  	Name: <%= current_user.name %><br>
+	Email: <%= current_user.email %></p>
+
+
+<h1 class="display-3">Your events</h1>
+	<% @events.each do |event| %>
+		<%= event.name %>
+	<% end %>
+</div>
+	

@@ -1,0 +1,12 @@
+<%= form_for @venue do |f| %>
+  <class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+    <%= f.label :region_id %>
+    <%= f.select :region_id, @regions.map{|u| [u.name, u.id]}, {}, {class: "form-control"} %>
+    <%= f.label :full_address %><br/>
+    <%= f.text_field :full_address, class: "form-control" %>
+    <%= f.submit "Create", class: "btn btn-success" %>
+  </class="form-group">
+  </fieldset>
+<% end %>
